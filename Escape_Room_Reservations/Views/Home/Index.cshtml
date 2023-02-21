@@ -2,7 +2,61 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main {
+            display: grid;
+            grid-gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        .escape-rooms {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .room {
+            text-align: center;
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Burgas Escape Rooms</h1>
+        <p>Book Your Escape Adventure Now!</p>
+        <button>Book Now</button>
+    </header>
+    <main>
+        <section class="escape-rooms">
+            <h2>Escape Rooms</h2>
+            <div class="room">
+                <img src="room1.jpg" alt="Escape Room 1">
+                <h3>Escape Room 1</h3>
+                <p>Difficulty: Easy</p>
+                <button>Book Now</button>
+            </div>
+            <div class="room">
+                <img src="room2.jpg" alt="Escape Room 2">
+                <h3>Escape Room 2</h3>
+                <p>Difficulty: Medium</p>
+                <button>Book Now</button>
+            </div>
+            <div class="room">
+                <img src="room3.jpg" alt="Escape Room 3">
+                <h3>Escape Room 3</h3>
+                <p>Difficulty: Hard</p>
+                <button>Book Now</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
