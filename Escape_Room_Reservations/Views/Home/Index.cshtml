@@ -4,11 +4,7 @@
 
 <head>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+
 
         main {
             display: grid;
@@ -30,31 +26,26 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Burgas Escape Rooms</h1>
-        <p>Book Your Escape Adventure Now!</p>
-        <button>Book Now</button>
-    </header>
     <main>
+        <h2>Escape Rooms</h2>
         <section class="escape-rooms">
-            <h2>Escape Rooms</h2>
             <div class="room">
-                <img src="room1.jpg" alt="Escape Room 1">
+                <img src="/images/room1.jpg" alt="Escape Room 1" width="300" height="200">
                 <h3>Escape Room 1</h3>
                 <p>Difficulty: Easy</p>
-                <button>Book Now</button>
+                <a href="@Url.Action("Create", "Reservations")">Book Now</a>
             </div>
             <div class="room">
-                <img src="room2.jpg" alt="Escape Room 2">
+                <img src="/images/room2.jpg" alt="Escape Room 2" width="300" height="200">
                 <h3>Escape Room 2</h3>
                 <p>Difficulty: Medium</p>
-                <button>Book Now</button>
+                <a href="@Url.Action("Create", "Reservations")">Book Now</a>
             </div>
             <div class="room">
-                <img src="room3.jpg" alt="Escape Room 3">
+                <img src="/images/room3.jpg" alt="Escape Room 3" width="300" height="200">
                 <h3>Escape Room 3</h3>
                 <p>Difficulty: Hard</p>
-                <button>Book Now</button>
+                <a href="@Url.Action("Create", "Reservations")">Book Now</a>
             </div>
         </section>
     </main>
