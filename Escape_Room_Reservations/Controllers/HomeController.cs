@@ -1,22 +1,30 @@
-﻿using Escape_Room_Reservations.Models;
+﻿using Escape_Room_Reservations.Data;
+using Escape_Room_Reservations.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Escape_Room_Reservations.Data;
 
 namespace Escape_Room_Reservations.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-		public HomeController(ILogger<HomeController> logger)
-		{
-			_logger = logger;
-		}
+        public HomeController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-		public IActionResult Index()
-		{
-			return View();
-		}
+        public IActionResult Index()
+        {
+            var userCount = _context.Users.Count();
+            var roomCount = _context.Rooms.Count();
+
+            ViewBag.UserCount = userCount;
+            ViewBag.RoomCount = roomCount;
+
+            return View();
+        }
 
 		public IActionResult Privacy()
 		{
@@ -28,5 +36,5 @@ namespace Escape_Room_Reservations.Controllers
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 		}
-	}
+    }
 }

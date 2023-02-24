@@ -2,7 +2,89 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <style>
+        main {
+            display: grid;
+            grid-gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        #image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Set the container width to 100% */
+            max-width: 1600px; /* Add a max-width to limit the container size */
+            margin: 0 auto; /* Center the container horizontally */
+        }
+
+
+
+            #image-container a {
+                display: flex;
+                width: 30%;
+                height: 200px;
+                margin: 0 10px;
+                text-decoration: none;
+                flex-grow: 1; /* Make the anchor element grow to fill the space */
+            }
+
+
+
+
+            #image-container img {
+                width: 100%; /* Make the image fill the available space */
+                height: 100%;
+                object-fit: cover;
+                max-width: 100%; /* Limit the width to the anchor element width */
+            }
+
+
+
+        .dnumbers {
+            color: #ffc107;
+            font-size: 90px
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container dnumbers">
+            <h1>Welocome To Burgas Escape Rooms</h1>
+        </div>
+        <div id="image-container">
+            <a asp-controller="Reservations" asp-action="Create">
+                <img src="images/room1.jpg" alt="Image 1">
+            </a>
+            <a asp-controller="Reservations" asp-action="Create">
+                <img src="images/room2.jpg" alt="Image 2">
+            </a>
+            <a asp-controller="Reservations" asp-action="Create">
+                <img src="images/room3.jpg" alt="Image 3">
+            </a>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col text-center text-warning">
+                    <h2>Number Of Users:</h2>
+                    <div class="dnumbers">
+                        @ViewBag.UserCount
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col text-center text-warning">
+                    <h2>Number Of Rooms:</h2>
+                    <div class="dnumbers">
+                        @ViewBag.RoomCount
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
