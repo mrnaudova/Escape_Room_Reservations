@@ -4,50 +4,40 @@
 
 <head>
     <style>
-
-
         main {
+            
             display: grid;
             grid-gap: 20px;
             padding: 20px;
             justify-items: center;
         }
 
-        .escape-rooms {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .room {
-            text-align: center;
-            margin: 0 20px;
+        .dnumbers {
+            color: #ff9800;
+            font-size: 90px
         }
     </style>
 </head>
 <body>
     <main>
-        <h2>Escape Rooms</h2>
-        <section class="escape-rooms">
-            <div class="room">
-                <img src="/images/room1.jpg" alt="Escape Room 1" width="300" height="200">
-                <h3>Escape Room 1</h3>
-                <p>Difficulty: Easy</p>
-                <a href="@Url.Action("Create", "Reservations")">Book Now</a>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Number Of Users</h2>
+                    <div class="dnumbers">
+                        @ViewBag.UserCount
+                    </div>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                    <h2>Number Of Rooms</h2>
+                    <div class="dnumbers">
+                        @ViewBag.RoomCount
+                    </div>
+                </div>
             </div>
-            <div class="room">
-                <img src="/images/room2.jpg" alt="Escape Room 2" width="300" height="200">
-                <h3>Escape Room 2</h3>
-                <p>Difficulty: Medium</p>
-                <a href="@Url.Action("Create", "Reservations")">Book Now</a>
-            </div>
-            <div class="room">
-                <img src="/images/room3.jpg" alt="Escape Room 3" width="300" height="200">
-                <h3>Escape Room 3</h3>
-                <p>Difficulty: Hard</p>
-                <a href="@Url.Action("Create", "Reservations")">Book Now</a>
-            </div>
-        </section>
+        </div>
     </main>
 </body>
 </html>
